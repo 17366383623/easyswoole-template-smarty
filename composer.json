@@ -1,0 +1,29 @@
+{
+    "name": "easyswoole/smarty",
+    "type": "library",
+    "description": "An efficient swoole framework",
+    "keywords": [
+        "swoole",
+        "framework",
+        "async",
+        "easyswoole"
+    ],
+    "homepage": "https://www.easyswoole.com/",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "YH",
+            "email": "799475742@qq.com"
+        }
+    ],
+    "require": {
+        "easyswoole/component": "^2.1",
+        "easyswoole/swoole-ide-helper": "^1.3",
+        "duncan3dc/blade": "^4.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "EasySwoole\\Template\\Smarty\\": "src/"
+        }
+    }
+}
