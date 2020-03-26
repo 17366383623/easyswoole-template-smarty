@@ -5,7 +5,7 @@
     <title>test-blade</title>
 </head>
 <body>
-    i'm render by {{ $engine }}
+    i'm render by  <{$engine}>
     {{$test}}
 </body>
 </html>
