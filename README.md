@@ -61,7 +61,7 @@ public static function mainServerCreate(EventRegister $register)
 public function index()
 {
     // 可添加参数三 用于设置当次渲染配置并且只作用于当次（默认为空）
-    $renderStr = \EasySwoole\Template\Think\Render::getInstance()->view('Index/index',['time'=>time()]);
+    $renderStr = \EasySwoole\Template\Smarty\Render::getInstance()->view('Index/index',['time'=>time()]);
     $this->response()->write($renderStr);
 }
 
@@ -73,7 +73,7 @@ public function index()
     $smarty->left_delimiter = '<{';
     $smarty->right_delimiter = '}>';
     // 可添加参数三 用于设置当次渲染配置并且只作用于当次（默认为空）
-    $renderStr = \EasySwoole\Template\Think\Render::getInstance()->view('Index/index',['time'=>time()],$smarty);
+    $renderStr = \EasySwoole\Template\Smarty\Render::getInstance()->view('Index/index',['time'=>time()],$smarty);
     $this->response()->write($renderStr);
 }
 ```
