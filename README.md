@@ -76,4 +76,6 @@ public function index()
     $renderStr = \EasySwoole\Template\Smarty\Render::getInstance()->view('Index/index',['time'=>time()],$smarty);
     $this->response()->write($renderStr);
 }
+
+ps: Smarty更多的配置参数见：https://www.php.cn/manual/view/15656.html
 ```
