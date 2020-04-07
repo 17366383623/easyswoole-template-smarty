@@ -5,28 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="EasySwoole\Template\Smarty\" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/component" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/spl" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/swoole-ide-helper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/utility" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/container" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/events" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/filesystem" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/view" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/jeremeamia/superclosure" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation-contracts" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
