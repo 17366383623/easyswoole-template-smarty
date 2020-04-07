@@ -6,6 +6,6 @@
 </head>
 <body>
     i'm render by  <{$engine}>
-    {{$test}}
+    {$test}
 </body>
 </html>

@@ -5,7 +5,7 @@
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e8bf2cb525714_36098764',
+  'unifunc' => 'content_5e8bf2cb52ad56_90379430',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -16,24 +16,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
       2 => 'file',
     ),
   ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5e8bf2cb525714_36098764 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1759006245e8bf2cb4a64c5_25053829';
-?>
-<!DOCTYPE html>
+  'cache_lifetime' => 3600,
+),true)) {
+function content_5e8bf2cb52ad56_90379430 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>test-blade</title>
 </head>
 <body>
-    i'm render by  <?php echo $_smarty_tpl->tpl_vars['engine']->value;?>
-
-    <?php echo $_smarty_tpl->tpl_vars['test']->value;?>
-
+    i'm render by  smarty
+    smarty2
 </body>
 </html><?php }
 }
