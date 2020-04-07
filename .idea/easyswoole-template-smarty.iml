@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/spl" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/swoole-ide-helper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyswoole/utility" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/smarty/smarty" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

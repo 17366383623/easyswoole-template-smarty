@@ -5,11 +5,8 @@ namespace EasySwoole\Template\Smarty;
 
 class Config
 {
-    /** @var string path */
-    private $view_path;
-
-    /** @var string path */
-    private $cache_path;
+    /** @var \Smarty renderEngine */
+    private $engine;
 
     /** @var int timeout */
     private $timeout = 0.5;
@@ -20,26 +17,24 @@ class Config
     /** @var string renderProcessNamePrefix */
     private $socketPrefix = 'render';
 
+    /**
+     * Config constructor.
+     */
+    public function __construct()
+    {
+        $this->setEngine(new \Smarty());
+    }
 
     /**
      * get view path
      *
-     * @return string
+     * @return \Smarty
      */
-    public function getViewPath(): string
+    public function getEngine(): \Smarty
     {
-        return $this->view_path;
+        return $this->engine;
     }
 
-    /**
-     * get cache path
-     *
-     * @return string |null
-     */
-    public function getCachePath(): ?string
-    {
-        return $this->cache_path;
-    }
 
     /**
      * get timeout
@@ -72,32 +67,15 @@ class Config
     }
 
     /**
-     * set view path
+     * set Engine
      *
-     * @param string $path
+     * @param \Smarty $engine
      */
-    public function setViewPath(string $path): void
+    public function setEngine(\Smarty $engine): void
     {
-        if(substr($path, -1, 1) !== '/'){
-            $this->view_path = $path.'/';
-            return;
-        }
-        $this->view_path = $path;
+        $this->engine = $engine;
     }
 
-    /**
-     * set cache path
-     *
-     * @param string $path
-     */
-    public function setCachePath(string $path): void
-    {
-        if(substr($path, -1, 1) !== '/'){
-            $this->cache_path = $path.'/';
-            return;
-        }
-        $this->cache_path = $path;
-    }
 
     /**
      * set timeout

@@ -57,16 +57,21 @@ class Render
      *
      * @param string $path
      * @param array $data
+     * @param \Smarty|NULL $templateEngine
      * @return mixed
      */
-    public function view(string $path, array $data = []): ?string
+    public function view(string $path, array $data = [], $templateEngine = NULL): ?string
     {
+        $options = $this->config;
+        if($templateEngine && $templateEngine instanceof \Smarty){
+            $options->setEngine($templateEngine);
+        }
         $sockFileFd = $this->getRenderProcess();
         $client = new UnixClient($sockFileFd);
         $client->send(Protocol::pack(serialize(([
             'template' => $path,
             'data' => $data,
-            'options' => $this->config
+            'options' => $options
         ]))));
         $recvData = $client->recv($this->config->getTimeout());
         if($recvData){

@@ -11,19 +11,24 @@ class RenderProcess extends AbstractUnixProcess
 {
     public function onAccept(Socket $socket): void
     {
-        $data = $this->getUnixMessage($socket);
-        $render = $this->getRender($data);
-        if($data){
-            $reply = $this->renderView($render, $data);
-            $socket->sendAll(Protocol::pack(serialize($reply)));
+        try {
+            $data = $this->getUnixMessage($socket);
+            $render = $this->getRender($data);
+            if($data){
+                $reply = $this->renderView($render, $data);
+                $socket->sendAll(Protocol::pack(serialize($reply)));
+            }
+        }catch (\Throwable $throwable){
+            $this->onException($throwable);
+        } finally {
+            $socket->close();
         }
-        $socket->close();
     }
 
-    protected function getRender(array $options): BladeEngine
+    protected function getRender(array $options): \Smarty
     {
         $config = $options['options'];
-        return new BladeEngine($config->getViewPath(), $config->getCachePath());
+        return $config->getEngine();
     }
 
     protected function getUnixMessage(Socket $socket): ?array
@@ -43,17 +48,11 @@ class RenderProcess extends AbstractUnixProcess
         }
     }
 
-    protected function renderView(BladeEngine $engine, array $params): ?string
+    protected function renderView(\Smarty $engine, array $params): ?string
     {
-        try{
-            $reply = $engine->render($params['template'],$params['data']);
-            return $reply;
-        }catch (\Throwable $throwable){
-            $reply = $engine->onException($throwable);
-            return $reply;
-        }finally{
-            $engine->afterRender($reply,$params['template'],$params['data']);
-        }
+        ob_start();
+        $reply = $engine->display($params['template'],$params['data']);
+        return ob_get_clean();
     }
 
     protected function onException(\Throwable $throwable,...$arg): void
