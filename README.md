@@ -48,13 +48,13 @@ php test.php
 // 框架 EasySwooleEvent.php 中 mianServerCreate 方法中加入以下配置
 public static function mainServerCreate(EventRegister $register)
 {
-    // 设置全局渲染参数
     $smarty = new \Smarty();
     $smarty->setTemplateDir(EASYSWOOLE_ROOT.'/Template/');
     $smarty->setCacheDir(EASYSWOOLE_ROOT.'/Template/Cache/');
     $smarty->caching = TRUE;
     $config = new \EasySwoole\Template\Smarty\Config();
-    \EasySwoole\Template\Smarty\Render::getInstance()->init($smarty,$config);
+    $config->setEngine($smarty);
+    \EasySwoole\Template\Smarty\Render::getInstance()->init($config);
 }
 
 // 控制器中使用
